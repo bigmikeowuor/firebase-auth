@@ -20,6 +20,8 @@ var app = new Vue({
 		email: '',
 		password: '',
 		authUser: null,
+		displayName: null,
+		photoURL: null,
 	},
 
 	methods: {
@@ -59,6 +61,13 @@ var app = new Vue({
 				.catch((error) => alert(error.message));
 		},
 
+		updateProfile() {
+			this.authUser.updateProfile({
+				displayName: this.displayName,
+				photoURL: this.photoURL,
+			});
+		},
+
 		clearFields() {
 			this.email = '';
 			this.password = '';
@@ -68,6 +77,11 @@ var app = new Vue({
 	created() {
 		firebase.auth().onAuthStateChanged((user) => {
 			this.authUser = user;
+
+			if (user) {
+				this.displayName = user.displayName;
+				this.photoURL = user.photoURL;
+			}
 		});
 	},
 });

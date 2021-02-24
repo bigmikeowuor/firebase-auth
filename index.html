@@ -36,10 +36,35 @@
 			<h1>Vue.js + Firebase Authentication</h1>
 
 			<div v-if="authUser">
-				<h5>You are signed in as {{ authUser.email }}</h5>
+				<h3 class="my-4">You are signed in as {{ authUser.email }}</h3>
 				<img :src="authUser.photoURL" class="img-thumbnail" alt="user image" />
 				<p>Hello, {{ authUser.displayName || 'friend' }}?</p>
 				<button type="button" class="btn btn-primary" @click="signOut">Sign Out</button>
+
+				<form @submit.prevent="updateProfile">
+					<h4 class="my-4">Update Profile</h4>
+					<div class="form-group">
+						<label for="userDisplayName">Display Name</label>
+						<input
+							type="text"
+							class="form-control"
+							id="userDisplayName"
+							v-model="displayName"
+							placeholder="Your name"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="userPhotoURL">Photo URL</label>
+						<input
+							type="text"
+							class="form-control"
+							id="userPhotoURL"
+							v-model="photoURL"
+							placeholder="Your phot url"
+						/>
+					</div>
+					<button type="submit" class="btn btn-primary">Update</button>
+				</form>
 			</div>
 
 			<div v-else>
