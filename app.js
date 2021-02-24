@@ -24,17 +24,28 @@ var app = new Vue({
 
 	methods: {
 		register() {
-			firebase.auth().createUserWithEmailAndPassword(this.email, this.password);
+			firebase
+				.auth()
+				.createUserWithEmailAndPassword(this.email, this.password)
+				.then(() => console.log('Registration successful...'))
+				.catch((error) => alert(error.message));
 			this.clearFields();
 		},
 
 		signOut() {
-			firebase.auth().signOut();
+			firebase
+				.auth()
+				.signOut()
+				.then(() => console.log('Sign out successful...'));
 			this.clearFields();
 		},
 
 		signIn() {
-			firebase.auth().signInWithEmailAndPassword(this.email, this.password);
+			firebase
+				.auth()
+				.signInWithEmailAndPassword(this.email, this.password)
+				.then(() => console.log('Sign in successful...'))
+				.catch((error) => alert(error.message));
 			this.clearFields();
 		},
 
