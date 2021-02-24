@@ -37,6 +37,8 @@
 
 			<div v-if="authUser">
 				<h5>You are signed in as {{ authUser.email }}</h5>
+				<img :src="authUser.photoURL" class="img-thumbnail" alt="user image" />
+				<p>Hello, {{ authUser.displayName || 'friend' }}?</p>
 				<button type="button" class="btn btn-primary" @click="signOut">Sign Out</button>
 			</div>
 
@@ -90,6 +92,11 @@
 					</div>
 					<button type="submit" class="btn btn-primary">Sign In</button>
 				</form>
+
+				<h3>Sign In with Google</h3>
+				<button type="button" class="btn btn-primary" @click="signInWithGoogle">
+					Sign In
+				</button>
 			</div>
 		</div>
 	</body>

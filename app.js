@@ -49,6 +49,16 @@ var app = new Vue({
 			this.clearFields();
 		},
 
+		signInWithGoogle() {
+			const provider = new firebase.auth.GoogleAuthProvider();
+
+			firebase
+				.auth()
+				.signInWithPopup(provider)
+				.then(() => console.log('Sign in with Google successful...'))
+				.catch((error) => alert(error.message));
+		},
+
 		clearFields() {
 			this.email = '';
 			this.password = '';
