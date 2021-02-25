@@ -23,6 +23,7 @@ var app = new Vue({
 		authUser: null,
 		displayName: null,
 		photoURL: null,
+		favoriteFood: '',
 	},
 
 	methods: {
@@ -66,7 +67,7 @@ var app = new Vue({
 			const provider = new firebase.auth.GoogleAuthProvider();
 
 			this.authUser
-				.unlinkWithPopup(provider)
+				.linkWithPopup(provider)
 				.then(() => console.log('Link with Google successful...'))
 				.catch((error) => alert(error.message));
 		},
@@ -101,10 +102,22 @@ var app = new Vue({
 			this.clearFields();
 		},
 
+		updateCustomDetails() {
+			firebase
+				.database()
+				.ref('users')
+				.child(this.authUser.uid)
+				.update({ favoriteFood: this.favoriteFood })
+				.then(() => console.log('Custom details updated successfully...'))
+				.catch((error) => alert(error.message));
+			this.clearFields();
+		},
+
 		clearFields() {
 			this.email = '';
 			this.password = '';
 			this.newPassword = '';
+			this.favoriteFood = '';
 		},
 	},
 
@@ -130,6 +143,16 @@ var app = new Vue({
 				this.displayName = user.displayName;
 				this.photoURL = user.photoURL;
 				this.email = user.email;
+				firebase
+					.database()
+					.ref('users')
+					.child(user.uid)
+					.once('value', (snapshot) => {
+						if (snapshot.val()) {
+							this.favoriteFood = snapshot.val().favoriteFood;
+							Vue.set(this.authUser, 'favoriteFood', this.favoriteFood);
+						}
+					});
 			}
 		});
 	},

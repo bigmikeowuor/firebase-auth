@@ -24,6 +24,10 @@
 			src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"
 			defer
 		></script>
+		<script
+			src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"
+			defer
+		></script>
 
 		<!-- Development version of Vue.js, includes helpful console warnings -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
@@ -51,7 +55,10 @@
 					/>
 				</h3>
 				<img :src="authUser.photoURL" class="img-thumbnail" alt="user-image" />
-				<p>Hello, {{ authUser.displayName || 'friend' }}?</p>
+				<p>
+					Hello, {{ authUser.displayName || 'friend' }}? We know you like {{
+					authUser.favoriteFood || 'food' }}.
+				</p>
 				<button type="button" class="btn btn-primary" @click="signOut">Sign Out</button>
 				<button
 					v-if="!linkedToGoogle"
@@ -85,6 +92,21 @@
 							id="userPhotoURL"
 							v-model="photoURL"
 							placeholder="Your phot url"
+						/>
+					</div>
+					<button type="submit" class="btn btn-primary">Update</button>
+				</form>
+
+				<form @submit.prevent="updateCustomDetails">
+					<h4 class="my-4">Update Additional Details</h4>
+					<div class="form-group">
+						<label for="favoriteFood">Your Favorite Food</label>
+						<input
+							type="text"
+							class="form-control"
+							id="favoriteFood"
+							v-model="favoriteFood"
+							placeholder="Your favorite food"
 						/>
 					</div>
 					<button type="submit" class="btn btn-primary">Update</button>
