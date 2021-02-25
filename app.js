@@ -19,6 +19,7 @@ var app = new Vue({
 	data: {
 		email: '',
 		password: '',
+		newPassword: '',
 		authUser: null,
 		displayName: null,
 		photoURL: null,
@@ -68,9 +69,26 @@ var app = new Vue({
 			});
 		},
 
+		updateEmail() {
+			this.authUser
+				.updateEmail(this.email)
+				.then(() => console.log('Email update successful...'))
+				.catch((error) => alert(error.message));
+			this.clearFields();
+		},
+
+		updatePassword() {
+			this.authUser
+				.updatePassword(this.newPassword)
+				.then(() => console.log('Password update successful...'))
+				.catch((error) => alert(error.message));
+			this.clearFields();
+		},
+
 		clearFields() {
 			this.email = '';
 			this.password = '';
+			this.newPassword = '';
 		},
 	},
 
@@ -81,6 +99,7 @@ var app = new Vue({
 			if (user) {
 				this.displayName = user.displayName;
 				this.photoURL = user.photoURL;
+				this.email = user.email;
 			}
 		});
 	},

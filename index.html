@@ -4,6 +4,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Vue.js + Firebase Authentication</title>
+
 		<!-- Bootstrap CSS -->
 		<link
 			rel="stylesheet"
@@ -65,11 +66,41 @@
 					</div>
 					<button type="submit" class="btn btn-primary">Update</button>
 				</form>
+
+				<form @submit.prevent="updateEmail">
+					<h4 class="my-4">Update Email</h4>
+					<div class="form-group">
+						<label for="userEmailAddress">Email Address</label>
+						<input
+							type="text"
+							class="form-control"
+							id="userEmailAddress"
+							v-model="email"
+							placeholder="Your email address"
+						/>
+					</div>
+					<button type="submit" class="btn btn-primary">Update</button>
+				</form>
+
+				<form @submit.prevent="updatePassword">
+					<h4 class="my-4">Change Password</h4>
+					<div class="form-group">
+						<label for="userPassword">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="userPassword"
+							v-model="newPassword"
+							placeholder="Your new password"
+						/>
+					</div>
+					<button type="submit" class="btn btn-primary">Change Password</button>
+				</form>
 			</div>
 
 			<div v-else>
 				<form @submit.prevent="register">
-					<h3>Register</h3>
+					<h3 class="my-4">Register</h3>
 					<div class="form-group">
 						<label for="registerEmail">Email</label>
 						<input
@@ -94,7 +125,7 @@
 				</form>
 
 				<form @submit.prevent="signIn">
-					<h3>Sign In</h3>
+					<h3 class="my-4">Sign In</h3>
 					<div class="form-group">
 						<label for="signinEmail">Email</label>
 						<input
@@ -118,7 +149,7 @@
 					<button type="submit" class="btn btn-primary">Sign In</button>
 				</form>
 
-				<h3>Sign In with Google</h3>
+				<h3 class="my-4">Sign In with Google</h3>
 				<button type="button" class="btn btn-primary" @click="signInWithGoogle">
 					Sign In
 				</button>
