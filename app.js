@@ -62,6 +62,22 @@ var app = new Vue({
 				.catch((error) => alert(error.message));
 		},
 
+		linkWithGoogle() {
+			const provider = new firebase.auth.GoogleAuthProvider();
+
+			this.authUser
+				.unlinkWithPopup(provider)
+				.then(() => console.log('Link with Google successful...'))
+				.catch((error) => alert(error.message));
+		},
+
+		unlinkFromGoogle() {
+			this.authUser
+				.unlink('google.com')
+				.then(() => console.log('Unlink from Google successful...'))
+				.catch((error) => alert(error.message));
+		},
+
 		updateProfile() {
 			this.authUser.updateProfile({
 				displayName: this.displayName,
@@ -89,6 +105,20 @@ var app = new Vue({
 			this.email = '';
 			this.password = '';
 			this.newPassword = '';
+		},
+	},
+
+	computed: {
+		linkedToGoogle() {
+			return !!this.authUser.providerData.find(
+				(provider) => provider.providerId === 'google.com'
+			);
+		},
+
+		linkedToPassword() {
+			return !!this.authUser.providerData.find(
+				(provider) => provider.providerId === 'password'
+			);
 		},
 	},
 

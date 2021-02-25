@@ -37,10 +37,33 @@
 			<h1>Vue.js + Firebase Authentication</h1>
 
 			<div v-if="authUser">
-				<h3 class="my-4">You are signed in as {{ authUser.email }}</h3>
-				<img :src="authUser.photoURL" class="img-thumbnail" alt="user image" />
+				<h3 class="my-4">
+					You are signed in as {{ authUser.email }}
+					<img
+						v-if="linkedToGoogle"
+						src="https://www.gstatic.com/mobilesdk/160512_mobilesdk/auth_service_google.svg"
+						alt="google-link"
+					/>
+					<img
+						v-if="linkedToPassword"
+						src="https://www.gstatic.com/mobilesdk/160409_mobilesdk/images/auth_service_email.svg"
+						alt="email-link"
+					/>
+				</h3>
+				<img :src="authUser.photoURL" class="img-thumbnail" alt="user-image" />
 				<p>Hello, {{ authUser.displayName || 'friend' }}?</p>
 				<button type="button" class="btn btn-primary" @click="signOut">Sign Out</button>
+				<button
+					v-if="!linkedToGoogle"
+					type="button"
+					class="btn btn-warning"
+					@click="linkWithGoogle"
+				>
+					Link Google Account
+				</button>
+				<button v-else type="button" class="btn btn-warning" @click="unlinkFromGoogle">
+					Unlink Google Account
+				</button>
 
 				<form @submit.prevent="updateProfile">
 					<h4 class="my-4">Update Profile</h4>
@@ -151,7 +174,7 @@
 
 				<h3 class="my-4">Sign In with Google</h3>
 				<button type="button" class="btn btn-primary" @click="signInWithGoogle">
-					Sign In
+					Sign In with Google
 				</button>
 			</div>
 		</div>
