@@ -80,10 +80,13 @@ var app = new Vue({
 		},
 
 		updateProfile() {
-			this.authUser.updateProfile({
-				displayName: this.displayName,
-				photoURL: this.photoURL,
-			});
+			this.authUser
+				.updateProfile({
+					displayName: this.displayName,
+					photoURL: this.photoURL,
+				})
+				.then(() => console.log('Profile update successful...'))
+				.catch((error) => alert(error.message));
 		},
 
 		updateEmail() {

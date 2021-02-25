@@ -1,0 +1,24 @@
+{
+	"name": "firebase-auth",
+	"version": "1.0.0",
+	"description": "This project was about how to use Firebase Authentication in my Vue.js application and allow users to authenticate with third-party providers (Twitter, GitHub, Google etc.) or plain old email and password. Whats more no server-side code was necessary.",
+	"main": "index.html",
+	"scripts": {
+		"dev": "parcel index.html",
+		"build": "parcel build index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bigmikeowuor/firebase-auth.git"
+	},
+	"keywords": [],
+	"author": "Michael Owuor",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/bigmikeowuor/firebase-auth/issues"
+	},
+	"homepage": "https://github.com/bigmikeowuor/firebase-auth#readme",
+	"devDependencies": {
+		"parcel-bundler": "^1.12.4"
+	}
+}

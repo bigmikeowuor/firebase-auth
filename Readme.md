@@ -15,4 +15,17 @@ What I learned creating the application:
 
 ## Live Site
 
-This repository does not have a live site.
+The live site can be accessed at [this website][website]...
+
+[website]: https://vue-firebase-auth.s3.co.ke/
+
+## Installation Steps
+
+1. Clone the project from GitHub.
+2. Open the project in Visual Studio Code and run the following code:
+
+`npm install`
+
+3. Run the project:
+
+`npm run dev`
