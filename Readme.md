@@ -4,20 +4,21 @@ This project was about how to use Firebase Authentication in my Vue.js applicati
 
 What I learned creating the application:
 
-- How to set up and connect to Firebase Authentication.
-- How to sign users up, in and out.
-- How to catch Firebase auth errors.
-- How to authenticate a user via 3rd party providers.
-- How to update a Firebase user’s profile, email, and password.
-- How to link multiple authentication providers to one user account.
-- How we can store additional user data in our backend.
-- How to protect routes in a Single Page Application, using Vue Router, Vuex, and Firebase Authentication.
+1. How to set up and connect to Firebase Authentication.
+1. How to sign users up, in and out.
+1. How to catch Firebase auth errors.
+1. How to authenticate a user via 3rd party providers.
+1. How to update a Firebase user’s profile, email, and password.
+1. How to link multiple authentication providers to one user account.
+1. How we can store additional user data in our backend.
+1. How to protect routes in a Single Page Application, using Vue Router, Vuex, and Firebase Authentication.
 
-## Live Site
+## Technology Used
 
-The live site can be accessed at [this website][website]...
-
-[website]: https://vue-firebase-auth.s3.co.ke/
+1. Bootstrap.
+1. Vue.
+1. Firebase Realtime Database.
+1. Firebase Hosting.
 
 ## Installation Steps
 
@@ -29,3 +30,9 @@ The live site can be accessed at [this website][website]...
 3. Run the project:
 
 `npm run dev`
+
+## Live Site
+
+The live site can be accessed at the [Vue.js Firebase Authentication website][website].
+
+[website]: https://vue-firebase-auth.s3.co.ke/

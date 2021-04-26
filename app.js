@@ -1,12 +1,13 @@
 // firebase configuration
 let firebaseConfig = {
-	apiKey: 'AIzaSyARnOQnc7YLKd8vG-eqCNAtMCX0Cgu5sZQ',
-	authDomain: 'vue-http-demo-mo.firebaseapp.com',
-	databaseURL: 'https://vue-http-demo-mo-default-rtdb.europe-west1.firebasedatabase.app',
-	projectId: 'vue-http-demo-mo',
-	storageBucket: 'vue-http-demo-mo.appspot.com',
-	messagingSenderId: '561930183755',
-	appId: '1:561930183755:web:381946c19b3979e04a19ce',
+	apiKey: 'AIzaSyDF937Gy0H0f8BkjhxurqdAJmoAFzbuu84',
+	authDomain: 'vue-firebase-auth-swap.firebaseapp.com',
+	databaseURL:
+		'https://vue-firebase-auth-swap-default-rtdb.europe-west1.firebasedatabase.app',
+	projectId: 'vue-firebase-auth-swap',
+	storageBucket: 'vue-firebase-auth-swap.appspot.com',
+	messagingSenderId: '1056730425850',
+	appId: '1:1056730425850:web:a4e99fa6d25d00687d5c43',
 };
 
 // initialize firebase
