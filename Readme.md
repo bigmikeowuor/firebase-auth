@@ -33,6 +33,6 @@ What I learned creating the application:
 
 ## Live Site
 
-The live site can be accessed at the [Vue.js Firebase Authentication website][website].
+The live site can be accessed at the [Vue.js + Firebase Authentication website][website].
 
 [website]: https://vue-firebase-auth.s3.co.ke/

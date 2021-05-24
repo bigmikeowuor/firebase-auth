@@ -1,2 +1,24 @@
+# dependecies folder
 node_modules/
+dist/
 .cache/
+.DS_Store
+
+# local env files
+.env.local
+.env.*.local
+
+# log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
