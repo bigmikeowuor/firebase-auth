@@ -2,6 +2,8 @@
 let firebaseConfig = {
 	apiKey: 'AIzaSyDROj1hyuHyWFs-BYUDZx_aWlUi59JiuxY',
 	authDomain: 'vue-firebase-auth-wap.firebaseapp.com',
+	databaseURL:
+		'https://vue-firebase-auth-wap-default-rtdb.europe-west1.firebasedatabase.app',
 	projectId: 'vue-firebase-auth-wap',
 	storageBucket: 'vue-firebase-auth-wap.appspot.com',
 	messagingSenderId: '361780437698',
