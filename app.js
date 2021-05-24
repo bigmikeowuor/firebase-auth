@@ -1,13 +1,11 @@
 // firebase configuration
 let firebaseConfig = {
-	apiKey: 'AIzaSyDF937Gy0H0f8BkjhxurqdAJmoAFzbuu84',
-	authDomain: 'vue-firebase-auth-swap.firebaseapp.com',
-	databaseURL:
-		'https://vue-firebase-auth-swap-default-rtdb.europe-west1.firebasedatabase.app',
-	projectId: 'vue-firebase-auth-swap',
-	storageBucket: 'vue-firebase-auth-swap.appspot.com',
-	messagingSenderId: '1056730425850',
-	appId: '1:1056730425850:web:a4e99fa6d25d00687d5c43',
+	apiKey: 'AIzaSyDROj1hyuHyWFs-BYUDZx_aWlUi59JiuxY',
+	authDomain: 'vue-firebase-auth-wap.firebaseapp.com',
+	projectId: 'vue-firebase-auth-wap',
+	storageBucket: 'vue-firebase-auth-wap.appspot.com',
+	messagingSenderId: '361780437698',
+	appId: '1:361780437698:web:b947737169ab0d4cbb515b',
 };
 
 // initialize firebase
